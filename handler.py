@@ -36,8 +36,7 @@ class Handle(object):
         if len(data) != 0:
             res = requests.post('http://127.0.0.1:8080/xtcs/@@notify', data = {'xml':data})
         logging.warning('post request:%s' % res)
-        import pdb
-        pdb.set_trace()
+
         if res.text == "ok":                   
             return "<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>"
         else:
